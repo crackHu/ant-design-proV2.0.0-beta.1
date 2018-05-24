@@ -18,5 +18,6 @@ export default {
   },
   disableDynamicImport: true,
   publicPath: '/',
+  outputPath: '../src/main/resources/static',
   hash: true,
 };

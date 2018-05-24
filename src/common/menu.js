@@ -1,6 +1,6 @@
 import { isUrl } from '../utils/utils';
 
-const menuData = [
+let menuData = [
   {
     name: 'dashboard',
     icon: 'dashboard',
@@ -153,6 +153,19 @@ const menuData = [
         path: 'register-result',
       },
     ],
+  },
+];
+
+menuData = [
+  {
+    name: '应用管理',
+    icon: 'dashboard',
+    path: 'app',
+  },
+  {
+    name: '广告系列管理',
+    icon: 'dashboard',
+    path: 'ad-set',
   },
 ];
 

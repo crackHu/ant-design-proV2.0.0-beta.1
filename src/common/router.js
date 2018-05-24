@@ -72,6 +72,48 @@ export const getRouterData = app => {
     '/': {
       component: dynamicWrapper(app, ['user', 'login'], () => import('../layouts/BasicLayout')),
     },
+
+    // ad-mng begin
+    // app manager
+    '/app': {
+      component: dynamicWrapper(app, ['chart'], () => import('../routes/AppManage/AppList')),
+    },
+    '/app/:id': {
+      component: dynamicWrapper(app, ['chart'], () => import('../routes/AppManage/App')),
+    },
+    '/app/add': {
+      component: dynamicWrapper(app, ['chart'], () => import('../routes/AppManage/AppAdd')),
+    },
+    '/app/modify': {
+      component: dynamicWrapper(app, ['chart'], () => import('../routes/AppManage/AppModify')),
+    },
+    // ad set manager
+    '/ad-set': {
+      component: dynamicWrapper(app, ['monitor'], () => import('../routes/AdSetManage/AdSetList')),
+    },
+    '/ad-set/:id': {
+      component: dynamicWrapper(app, ['monitor'], () => import('../routes/AdSetManage/AdSet')),
+    },
+    '/ad-set/add': {
+      component: dynamicWrapper(app, ['monitor'], () => import('../routes/AdSetManage/AdSetAdd')),
+    },
+    '/ad-set/modify': {
+      component: dynamicWrapper(app, ['monitor'], () =>
+        import('../routes/AdSetManage/AdSetModify')
+      ),
+    },
+    // ad manager
+    '/ad-set/:ad-set-id/ad': {
+      component: dynamicWrapper(app, ['monitor'], () => import('../routes/AdManage/AdList')),
+    },
+    '/ad/:id': {
+      component: dynamicWrapper(app, ['monitor'], () => import('../routes/AdManage/Ad')),
+    },
+    '/ad-set/:ad-set-id/ad/add': {
+      component: dynamicWrapper(app, ['monitor'], () => import('../routes/AdManage/AdAdd')),
+    },
+    // ad-mng end
+
     '/dashboard/analysis': {
       component: dynamicWrapper(app, ['chart'], () => import('../routes/Dashboard/Analysis')),
     },
