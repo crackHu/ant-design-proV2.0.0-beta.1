@@ -167,7 +167,7 @@ menuData = [
     icon: 'dashboard',
     path: 'ad-set',
   },
-];
+].concat(menuData);
 
 function formatter(data, parentPath = '/', parentAuthority) {
   return data.map(item => {

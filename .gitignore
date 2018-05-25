@@ -1,4 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+*.exe
+*.bat
 
 # dependencies
 /node_modules

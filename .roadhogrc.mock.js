@@ -12,8 +12,30 @@ const noProxy = process.env.NO_PROXY === 'true';
 
 // 代码中会兼容本地 service mock 以及部署站点的静态数据
 const proxy = {
-  'GET /api/(.*)': 'http://localhost:8081/api/',
-  'POST /api/(.*)': 'http://localhost:8081/api/',
+  'GET /api/apps': {
+    page: 2,
+    size: 2,
+    totalPages: 15,
+    totalElements: 28,
+    content: [
+      {
+        id: 41,
+        name: '百度',
+        packageName: 'com.baidu.ad',
+        icon: 'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png',
+        description: 'd',
+      },
+      {
+        id: 37,
+        name: 'a',
+        packageName: null,
+        icon: 'c',
+        description: 'd',
+      },
+    ],
+  },
+  // 'GET /api/(.*)': 'http://localhost:8081/api/',
+  // 'POST /api/(.*)': 'http://localhost:8081/api/',
   // 支持值为 Object 和 Array
   'GET /api/currentUser': {
     $desc: '获取当前用户接口',
