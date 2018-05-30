@@ -1,1 +1,1 @@
-cd G:\GitProject\ant-design-proV2.0.0-beta.1 && npm install && npm start
+cd %cd% && npm start
