@@ -159,3 +159,20 @@ const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-
 export function isUrl(path) {
   return reg.test(path);
 }
+
+export function getFileUrl(fileList, num) {
+  if (Array.isArray(fileList)) {
+    const files = fileList.slice(num);
+    const urls = files
+      .filter(file => file.url || (file.status === 'done' && file.response))
+      .map(file => file.url || file.response.url);
+    return urls.join(',');
+  }
+}
+
+export function normFile(e) {
+  if (Array.isArray(e)) {
+    return e;
+  }
+  return e && e.fileList;
+}
