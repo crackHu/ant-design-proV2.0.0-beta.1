@@ -20,4 +20,9 @@ export default {
   publicPath: '/',
   outputPath: '../src/main/resources/static',
   hash: true,
+  proxy: {
+    '/api/file/upload': {
+      target: 'http://localhost:8081',
+    },
+  },
 };
